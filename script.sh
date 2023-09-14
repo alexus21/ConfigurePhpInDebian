@@ -28,8 +28,7 @@ sudo systemctl enable --now apache2
 echo "Habilitando servicio de php: "
 sleep 3
 sudo a2dismod php8.2
-
-echo "Para terminar el servicio, usa: 'sudo a2endmod php8.2'"
+sudo a2endmod php8.2
 
 echo "Instalando postgresql: "
 sleep 3
