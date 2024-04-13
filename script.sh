@@ -49,3 +49,7 @@ sudo echo "<?php phpinfo(); ?>" > /var/www/html/test.php
 echo "Ejecutando archivo de prueba: "
 sleep 3
 firefox localhost/test.php
+
+echo "Limpiando tu sistema: "
+sleep 3
+sudo apt autoremove -y
