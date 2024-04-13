@@ -44,7 +44,7 @@ psql --version
 
 echo "Creando archivo de prueba para PHP: "
 sleep 3
-sudo echo "<?php phpinfo(); ?>" > /var/www/html/test.php
+sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/test.php'
 
 echo "Ejecutando archivo de prueba: "
 sleep 3
