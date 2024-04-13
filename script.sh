@@ -3,9 +3,6 @@ clear
 echo "Instalando PHP 8.2 y Apache2 en tu sistema"
 sleep 5
 
-echo "Cambiando a usuario root. Ingresa tu contraseña de root: "
-su -
-
 echo "Actualizando repositorios de tu sistema..."
 sleep 3
 sudo apt update -y && sudo apt upgrade -y
@@ -67,6 +64,7 @@ sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/test.php'
 
 echo "Ejecutando archivo de prueba: "
 sleep 3
+#php /var/www/html/test.php
 firefox localhost/test.php
 
 echo "Limpiando tu sistema: "
