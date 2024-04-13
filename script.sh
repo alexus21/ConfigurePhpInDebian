@@ -1,5 +1,12 @@
 clear
 
+echo "Instalando PHP 8.2 y Apache2 en tu sistema"
+sleep 5
+
+echo "Instalando lsb_release: "
+sleep 3
+sudo apt install lsb-release -y
+
 echo "Actualizando repositorios de tu sistema..."
 sleep 3
 sudo apt update -y && sudo apt upgrade -y
