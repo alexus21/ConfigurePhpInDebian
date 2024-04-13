@@ -8,15 +8,16 @@
     ./script.sh
 ```
 
-Si no tienes sudo configurado para tu usuario, ejecuta lo siguiente:
+## Nota:
+Si no tienes sudo instalado, ejecuta lo siguiente:
 ```bash
     su -
+    apt install sudo
+```
+
+Ahora, agrega tu usuario al grupo sudo:
+```bash
     usermod -aG sudo <tu_usuario>
 ```
 
-O bien, puedes hacer lo siguiente:
-```bash
-    su -
-    cd /home/<tu_usuario>/ConfigurePhpInDebian/
-    ./script.sh
-```
+Después de eso, cierra la sesión y vuelve a iniciarla. O reinicia tu computadora. Ambas opciones son válidas.
