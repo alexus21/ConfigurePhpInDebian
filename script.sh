@@ -82,12 +82,13 @@ echo "*******************************************"
 sleep 3
 sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/test.php'
 
+
 echo "*******************************************"
 echo "Ejecutando archivo de prueba: "
 echo "*******************************************"
 sleep 3
 #php /var/www/html/test.php
-firefox localhost/test.php
+firefox localhost/test.php &
 
 echo "*******************************************"
 echo "Instalando composer: "
@@ -96,7 +97,7 @@ sleep 3
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
-sudo mv composer.phar /usr/local/bin/composer
+sudo mv -v composer.phar /usr/local/bin/composer
 
 echo "*******************************************"
 echo "Limpiando tu sistema: "
