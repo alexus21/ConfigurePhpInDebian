@@ -41,6 +41,10 @@ wget -qO - https://postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 sudo apt install -y postgresql
 
+echo "Instalando driver de postgresql para php: "
+sleep 3
+sudo apt install -y php8.2-pgsql
+
 echo "Iniciando postgresql: "
 sleep 3
 sudo systemctl enable --now postgresql
