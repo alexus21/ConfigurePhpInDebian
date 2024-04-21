@@ -53,15 +53,6 @@ echo "Revisando version de postgresql: "
 sleep 3
 psql --version
 
-echo "Creando usuario y base de datos de prueba: "
-sleep 3
-read -p "Ingresa el nombre de la base de datos: " db
-sudo -u postgres psql -c "CREATE DATABASE $db;"
-read -p "Ingresa el nombre de usuario: " user
-read -p "Ingresa la contraseña: " pass
-sudo -u postgres psql -c "CREATE USER $user WITH PASSWORD '$pass';"
-sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $db TO $user;"
-
 echo "Creando archivo de prueba para PHP: "
 sleep 3
 sudo sh -c 'echo "<?php phpinfo(); ?>" > /var/www/html/test.php'
