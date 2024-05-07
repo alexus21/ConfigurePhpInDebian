@@ -94,10 +94,17 @@ echo "*******************************************"
 echo "Instalando composer: "
 echo "*******************************************"
 sleep 3
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-sudo mv -v composer.phar /usr/local/bin/composer
+sudo apt install curl php-cli php-mbstring git unzip
+cd ~
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+HASH=`curl -sS https://composer.github.io/installer.sig`
+echo $HASH
+sleep 3
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sleep 3
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer --version
+sleep 3
 
 echo "*******************************************"
 echo "Limpiando tu sistema: "
